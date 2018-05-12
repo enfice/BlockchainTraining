@@ -1,23 +1,6 @@
 pragma solidity 0.4.23;
 
-contract FunctionModifiers {
-
-    address owner;
-
-    // Function Modifier
-    modifier onlyowner {
-        if (msg.sender == owner)
-            _;
-    }
-
-    uint price;
-
-    function changePrice(uint _price) public onlyowner {
-        price = _price;
-    }
-}
-
-
+// Global
 contract GlobalVariablesAndFunctions {
 
     // msg represent the current message received by the contracts during the execution. 
@@ -73,6 +56,7 @@ contract GlobalVariablesAndFunctions {
 }
 
 
+// Units
 contract Units {
     // Ether Units are available as a global variables
     // wei, finney, szabo & ether are variable themself
@@ -89,6 +73,7 @@ contract Units {
 }
 
 
+// Events
 contract EventsExample {
     // Event
     event LogUpdate(address indexed _from, bytes32 indexed _id, uint _value);
@@ -100,4 +85,37 @@ contract EventsExample {
     }
 
     uint info;
+}
+
+
+// Function Modifiers
+contract FunctionModifiers {
+
+    address owner;
+
+    // Function Modifier
+    modifier onlyowner {
+        if (msg.sender == owner)
+            _;
+    }
+
+    uint price;
+
+    function changePrice(uint _price) public onlyowner {
+        price = _price;
+    }
+}
+
+
+// Libraries
+library MyLib {
+    function getCoinHolder() returns (address) {
+        return address(this);
+    }
+}
+
+contract ContractUsingLibrary {
+    function getOwner() constant returns (address) {
+        return MyLib.getCoinHolder();
+    }
 }

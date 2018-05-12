@@ -24,8 +24,3 @@ contract SimpleCoin {
     }
 
 }
-
-
-
-
-
