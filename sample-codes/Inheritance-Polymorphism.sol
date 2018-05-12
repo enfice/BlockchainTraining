@@ -72,12 +72,8 @@ contract IornCoin is BaseCoin, MortalCoin {
 // If a constructor takes an argument, it needs to be provided in the header.
 contract DiamondCoin is BaseCoin, MortalCoin, IornCoin("GoldFeed") {
 
-    // Event
-    event LogUpdate(address indexed _from, bytes32 indexed _id, uint _value);
-
     function updateInfo(uint newInfo, bytes32 _id) public {
         kill();
-        emit LogUpdate(msg.sender, _id, 3);
         if (msg.sender == owner) info = newInfo;
     }
 
