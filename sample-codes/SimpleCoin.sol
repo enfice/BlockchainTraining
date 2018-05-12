@@ -3,7 +3,7 @@ pragma solidity 0.4.23;
 contract SimpleCoin {
     address minter;
     address artist;
-    uint royality = 5;
+    uint royalty = 5;
     mapping (address => uint) balances;
     
     constructor () public {
@@ -16,9 +16,9 @@ contract SimpleCoin {
     }
 
     function send(address receiver, uint amount) public {
-        if (balances[msg.sender] < amount + royality) return;
-        balances[msg.sender] -= amount + royality;
-        balances[artist] += royality;
+        if (balances[msg.sender] < amount + royalty) return;
+        balances[msg.sender] -= amount + royalty;
+        balances[artist] += royalty;
         balances[receiver] += amount;
     }
 
