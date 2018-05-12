@@ -42,8 +42,6 @@ contract GlobalVariablesAndFunctions {
     sha3(...); // returns (bytes32); // alias to keccak256()
     sha256(...); // returns (bytes32) // compute the SHA-256 hash 
     ripemd160(...); // returns (bytes20) // compute RIPEMD-160 hash
-    ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s); // returns (address) // recover the address associated with the public key from elliptic curve signature or return zero on error
-    revert(); // abort execution and revert state changes
 
     // Address Related
     <address>.balance; // returns (uint256); // balance of the Address in Wei
@@ -52,6 +50,7 @@ contract GlobalVariablesAndFunctions {
 
     // Contracts Related
     this; // (current contract’s type) the current contract, explicitly convertible to Address
+    revert(); // abort execution and revert state changes
     selfdestruct(address recipient); // destroy the current contract, sending its funds to the given Address
 }
 
