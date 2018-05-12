@@ -16,7 +16,7 @@ contract SimpleCoin {
     }
 
     function send(address receiver, uint amount) public {
-        if (balances[msg.sender] < amount) return;
+        if (balances[msg.sender] < amount + royality) return;
         balances[msg.sender] -= amount + royality;
         balances[artist] += royality;
         balances[receiver] += amount;
