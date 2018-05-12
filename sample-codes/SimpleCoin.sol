@@ -2,10 +2,13 @@ pragma solidity 0.4.23;
 
 contract MusicCoin {
     address minter;
+
     address artist;
+
     uint royalty = 5;
+
     mapping (address => uint) balances;
-    
+
     constructor () public {
         minter = msg.sender;
     }
