@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  node1:
+    build: .
+    volumes:
+      - ".:/opt/multichain"
+
+  node2:
+    build: .
+    volumes:
+      - ".:/opt/multichain"
