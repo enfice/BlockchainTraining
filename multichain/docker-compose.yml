@@ -5,8 +5,14 @@ services:
     build: .
     volumes:
       - ".:/opt/multichain"
+    command: /opt/multichain/start.sh
+    ports:
+      - "8001:80"
 
   node2:
     build: .
     volumes:
       - ".:/opt/multichain"
+    command: /opt/multichain/start.sh
+    ports:
+      - "8002:80"
