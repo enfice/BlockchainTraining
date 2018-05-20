@@ -52,8 +52,11 @@ then run:
 nano config.txt
 ```
 in this file update the values for:
+
 default.rpcport
+
 default.rpcuser
+
 default.rpcpassword
 
 ### Launch Multichain Web Demo:
