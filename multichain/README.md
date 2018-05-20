@@ -40,7 +40,12 @@ then run:
 ```sh
 nano /root/.multichain/chain1/multichain.conf
 ```
-copy the rpcuser & rpcpassword values
+append the rpc-port value in this file as:
+```sh
+rpcport=<port here> 
+```
+
+also copy the rpcuser & rpcpassword values from this file for next step.
 
 then goto /var/www/html/multichain-web-demo/ & run:
 ```sh

@@ -8,6 +8,7 @@ services:
     command: /opt/multichain/start.sh
     ports:
       - "8001:80"
+      - "2751:2750"
 
   node2:
     build: .
@@ -16,3 +17,4 @@ services:
     command: /opt/multichain/start.sh
     ports:
       - "8002:80"
+      - "2752:2750"
